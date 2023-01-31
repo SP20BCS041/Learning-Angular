@@ -1,0 +1,42 @@
+<table class="table table-striped table-bordered" border="5">
+  <thead>
+    <tr>
+      <th scope="col">#Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Salary</th>
+      <th scope="col">Address</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Even</th>
+      <th scope="col">Odd</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let i of eList; index as index; even as e; odd as o; first as f; last as l; trackBy: refreshEmployees " >
+      <td>{{index}}</td>
+      <td>{{i.Name}}</td>
+      <td>{{i.Salary}}</td>
+      <td>{{i.Address}}</td>
+      <td>{{f}}</td>
+      <td>{{l}}</td>
+      <td>{{e}}</td>
+      <td>{{o}}</td>
+    </tr>
+  </tbody>
+</table>
+<button (click)="refresh()">Refresh</button>
+
+<div [ngSwitch]="myValue">
+  <div *ngSwitchCase="1">
+<p>First</p>
+  </div>
+  <div *ngSwitchCase="2">
+    <p>Second</p>
+  </div>
+  <div *ngSwitchCase="3">
+    <p>Third</p>
+  </div>
+  <div *ngSwitchDefault>
+
+  </div>
+</div>
